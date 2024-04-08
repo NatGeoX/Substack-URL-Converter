@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Substack URL Converter</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+        #substackUrl {
+        max-width: 550px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Substack URL Converter</h1>
+    <div class="form-group">
+      <label for="substackUrl">Enter Substack URL:</label>
+      <input type="text" class="form-control" id="substackUrl" placeholder="https://theaiobserverx.substack.com/p/exploring-claude-3-a-comprehensive">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="convertUrl()">Convert</button>
+    <div class="mt-3">
+      <label for="convertedUrl">Converted URL:</label><br>
+      <a id="convertedUrl" href="#" target="_blank"></a>
+         </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    function convertUrl() {
+      var substackUrl = document.getElementById("substackUrl").value.trim();
+      var username = substackUrl.split(".substack.com")[0].split("//")[1];
+      var articleName = substackUrl.split("/p/")[1];
+      var convertedUrl = `https://open.techwriters.info/${username}/${articleName}`;
+      document.getElementById("convertedUrl").innerText = "🔗 " + convertedUrl;
+      document.getElementById("convertedUrl").href = convertedUrl;
+      document.getElementById("copyButton").style.display = "inline-block"; // Show the copy button
+    }
+
+      </script>
+</body>
+</html>
