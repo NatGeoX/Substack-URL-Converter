@@ -1,0 +1,1 @@
+X (formerly Twitter) blocks outgoing links to Substack. Our community, Tech Writer Stack, has created a tool to bypass these restrictions. This simple tool helps you generate a new URL that will redirect to your Substack publication.
